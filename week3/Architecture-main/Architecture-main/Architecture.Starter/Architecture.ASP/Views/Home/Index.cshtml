@@ -1,0 +1,43 @@
+﻿@model Architecture.ASP.Models.FormViewModel
+
+<h2>Beschikbaarheid formulier</h2>
+
+<p>Hier kun je beschikbaarheid en vakantiedagen aangeven.</p>
+
+@Html.ValidationSummary()
+
+@using (Html.BeginForm("PostForm", "Home", FormMethod.Post))
+{
+    <div class="form-group">
+
+        @Html.LabelFor(m => m.Omschrijving)
+        @Html.EditorFor(m => m.Omschrijving)
+
+    </div>
+    <div class="form-group">
+
+        @Html.LabelFor(m => m.IsHoliday)
+        @Html.EditorFor(m => m.IsHoliday)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Start)
+        @Html.EditorFor(m => m.Start)
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Einde)
+        @Html.EditorFor(m => m.Einde)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.IsRepeat)
+        @Html.EditorFor(m => m.IsRepeat)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.AantalKeer)
+        @Html.EditorFor(m => m.AantalKeer)
+    </div>
+
+    <input type="submit" value="Submit" class="btn btn-primary" />
+
+}

@@ -1,0 +1,32 @@
+﻿@{
+    Layout = null;
+}
+@model IEnumerable<String>
+
+<div id="myContent">
+
+    <input />
+
+    <table>
+
+        @foreach (String s in Model)
+        {
+            <tr>
+                <td>@s</td>
+            </tr>
+        }
+    </table>
+
+    <button id="button">Filter</button>
+
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        document.getElementById('button').addEventListener('click', () => {
+            fetch('https://localhost:44369/Home/Medewerkers').then(res => {
+                //vervang html door de html in de res
+            })
+        })
+    </script>
+}
